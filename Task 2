@@ -1,0 +1,30 @@
+# -------- Task 2: File Analysis & PDF Report --------
+import pandas as pd
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+# Read CSV file
+df = pd.read_csv("data.csv")   # make sure data.csv exists
+
+# Simple analysis
+summary = df.describe()
+
+# Create PDF
+pdf = canvas.Canvas("report.pdf", pagesize=letter)
+pdf.setFont("Helvetica", 12)
+pdf.drawString(100, 750, "Automated Data Analysis Report")
+pdf.drawString(100, 730, "-------------------------------")
+
+y = 700
+for col in summary.columns:
+    pdf.drawString(100, y, f"Column: {col}")
+    y -= 20
+    pdf.drawString(120, y, f"Mean: {summary[col]['mean']:.2f}")
+    y -= 20
+    pdf.drawString(120, y, f"Max: {summary[col]['max']:.2f}")
+    y -= 20
+    pdf.drawString(120, y, f"Min: {summary[col]['min']:.2f}")
+    y -= 40
+
+pdf.save()
+print("✅ PDF Report generated: report.pdf")
