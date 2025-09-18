@@ -1,1 +1,9 @@
-# Codetech-task-2
+NAME : PARITALA VENKATA MOKSHAGNA 
+COMPANY : CODE TECH IT SOLUTIONS 
+ID : CT04DY2461
+DOMAIN : PYTHON PROGRAMMING 
+DURATION : SEPTEMBER 2025 TO OCTOBER 2025
+MENTOR : NEELA SANTHOSH KUMAR 
+
+** overview **
+Reads data from a CSV file, analyzes it (mean, max, min), and generates a PDF report using ReportLab.
